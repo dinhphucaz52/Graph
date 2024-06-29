@@ -30,32 +30,31 @@ int main() {
     return 0;
 
     DoThi *g = new DoThi(4);
-    g->DocMTK("input.txt");
-    //g->InDSC();
-    if (g->VoHuong())
+    g->docMTK("input.txt");
+    g->inDSC();
+    if (g->voHuong())
     {
-        int tongBac = g->TongBac();
-        int bacDinh1 = g->Bac(1);
+        int tongBac = g->tongBac();
+        int bacDinh1 = g->bac(1);
     }
     else
     {
-        int tongBanBacRa = g->TongBanBacRa();
-        int tongBanBacVao = g->TongBanBacVao();
+        int tongBanBacRa = g->tongBanBacRa();
+        int tongBanBacVao = g->tongBanBacVao();
     }
-    //if (g->DayDu())
-        //cout << "Do thi day du";
-    //if (g->Vong())
-        //cout << "Do thi vong";
-    //if (g->HaiPhia())
-        //cout << "Do thi hai phia";
-    //g->DFS(1);
-    //g->BFS(1);
-    //int tplt = g->SoThanhPhanLienThong();
-    //cout << tplt;
-    //g->LietKeThanhPhanLienThong();
-    if (g->CoChuTrinhDon())
+    if (g->dayDu())
+        cout << "Do thi day du";
+    if (g->vong())
+        cout << "Do thi vong";
+    if (g->haiPhia())
+        cout << "Do thi hai phia";
+    g->dfs(1);
+    g->bfs(1);
+    int tplt = g->soThanhPhanLienThong();
+    cout << tplt;
+    g->lietKeThanhPhanLienThong();
+    if (g->coChuTrinhDon())
         cout << "Do thi co chu trinh don";
-
 
     return 0;
 }

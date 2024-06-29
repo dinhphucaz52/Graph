@@ -36,7 +36,7 @@ DoThi::DoThi(int V)
     this->adj = new std::vector<int>[V];
 }
 
-void DoThi::DocMTK(std::string path)
+void DoThi::docMTK(std::string path)
 {
 
     ifstream ifs(path);
@@ -58,7 +58,7 @@ void DoThi::DocMTK(std::string path)
     isVoHuong = checkVoHuong(a);
 }
 
-void DoThi::InDSC()
+void DoThi::inDSC()
 {
     for (int u = 0; u < this->V; u++) {
         cout << u << " : ";
@@ -68,7 +68,7 @@ void DoThi::InDSC()
     }
 }
 
-void DoThi::INDSK()
+void DoThi::inDSK()
 {
     for (int u = 0; u < this->V; u++) {
         for (auto v : this->adj[u])
@@ -76,54 +76,54 @@ void DoThi::INDSK()
     }
 }
 
-bool DoThi::VoHuong()
+bool DoThi::voHuong()
 {
     return isVoHuong;
 }
 
-int DoThi::TongBac()
+int DoThi::tongBac()
 {
     return this->E * 2;
 }
 
-int DoThi::Bac(int vertex)
+int DoThi::bac(int vertex)
 {
     return (int)this->adj[vertex].size();
 }
 
-int DoThi::TongBanBacRa()
+int DoThi::tongBanBacRa()
 {
     return this->E;
 }
 
-int DoThi::TongBanBacVao()
+int DoThi::tongBanBacVao()
 {
     return this->E;
 }
 
-int DoThi::BanBacRa(int vertex)
+int DoThi::banBacRa(int vertex)
 {
     return this->_banBacRa[vertex];
 }
 
-int DoThi::BanBacVao(int vertex)
+int DoThi::banBacVao(int vertex)
 {
     return this->_banBacVao[vertex];
 }
 
-bool DoThi::DayDu()
+bool DoThi::dayDu()
 {
     return V * (V - 1) / 2 == E;
 }
 
-bool DoThi::Vong()
+bool DoThi::vong()
 {
-    if (V * 2 != E || this->SoThanhPhanLienThong() != 1)
+    if (V * 2 != E || this->soThanhPhanLienThong() != 1)
         return false;
     return true;
 }
 
-bool DoThi::HaiPhia()
+bool DoThi::haiPhia()
 {
     // 0 -> White
     // 1 -> Black
@@ -148,7 +148,7 @@ bool DoThi::HaiPhia()
     return true;
 }
 
-void DoThi::DFS(int vertex)
+void DoThi::dfs(int vertex)
 {
     std::stack<int> s;
     std::vector<bool> vst(this->V);
@@ -167,7 +167,7 @@ void DoThi::DFS(int vertex)
     cout << endl;
 }
 
-void DoThi::BFS(int vertex)
+void DoThi::bfs(int vertex)
 {
     std::queue<int> q;
     std::vector<bool> vst(this->V);
@@ -184,7 +184,7 @@ void DoThi::BFS(int vertex)
     }
 }
 
-int DoThi::SoThanhPhanLienThong()
+int DoThi::soThanhPhanLienThong()
 {
     int cnt = 0;
     std::vector<bool> vst(this->V);
@@ -210,7 +210,7 @@ int DoThi::SoThanhPhanLienThong()
     return cnt;
 }
 
-void DoThi::LietKeThanhPhanLienThong()
+void DoThi::lietKeThanhPhanLienThong()
 {
     std::vector<std::vector<int>> res;
     std::vector<bool> vst(this->V);
@@ -243,7 +243,7 @@ void DoThi::LietKeThanhPhanLienThong()
     }
 }
 
-bool DoThi::CoChuTrinhDon()
+bool DoThi::coChuTrinhDon()
 {
     for (int u = 0; u < this->V; u++)
         this->vst[u] = false;
